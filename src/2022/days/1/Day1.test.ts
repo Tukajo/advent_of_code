@@ -4,8 +4,12 @@ const fullFilePath = __dirname + '/test_input.txt';
 const testInput = readFile(fullFilePath);
 
 // Test the day1 function
-import { solution } from './Day1';
+import { solutionPartOne, solutionPartTwo } from './Day1';
 
-test('Day 1', () => {
-    expect(solution(testInput)).toBe(59202);
+test('Day 1 Part 1', () => {
+    expect(solutionPartOne(testInput)).toBe(69836);
+});
+
+test('Day 1 Part 2', () => {
+    expect(solutionPartTwo(testInput)).toBe(207968);
 });
