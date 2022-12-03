@@ -11,5 +11,5 @@ test('Day 3 Part 1', () => {
 });
 
 test('Day 3 Part 2', () => {
-    expect(solutionPartTwo(testInput)).toBe(8394);
+    expect(solutionPartTwo(testInput)).toBe(2413);
 });
