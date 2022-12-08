@@ -11,9 +11,6 @@ export const solutionPartOne = (input: string): number => {
 
 export const solutionPartTwo = (input: string): number => {
     const fileSystem: FileSystem = generateFileSystem(input);
-    fileSystem.printFileSystem();
-    // predicate for directories with size over 100000.
-
     const USED_SPACE = fileSystem.root.getSize();
     const REQUIRED_SPACE = 30000000;
     const TOTAL_SPACE = 70000000;
@@ -22,6 +19,12 @@ export const solutionPartTwo = (input: string): number => {
     const sizePredicate = (node: FileSystemNodeType) => node.type === 'dir' && node.getSize() >= NEEDED_SPACE;
 
     const directoriesExceedingThreshold = fileSystem.root.getDescendantsByPredicate(sizePredicate);
-    const sorted = directoriesExceedingThreshold.map((node) => node.getSize()).sort((a, b) => a - b);
-    return sorted[0];
+    let min = Infinity;
+    directoriesExceedingThreshold.forEach((directory) => {
+        const size = directory.getSize();
+        if (size < min) {
+            min = size;
+        }
+    });
+    return min;
 };
