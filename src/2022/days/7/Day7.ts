@@ -1,4 +1,5 @@
-import { FileSystem, FileSystemNodeType, generateFileSystem } from './Day7Parser';
+import { FileSystemNodeType } from './Day7Types';
+import { FileSystem, generateFileSystem } from './Day7Parser';
 
 export const solutionPartOne = (input: string): number => {
     const fileSystem: FileSystem = generateFileSystem(input);
