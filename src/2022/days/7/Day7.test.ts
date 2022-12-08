@@ -7,9 +7,9 @@ const testInput = readFile(fullFilePath);
 import { solutionPartOne, solutionPartTwo } from './Day7';
 
 test('Day 7 Part 1', () => {
-    expect(solutionPartOne(testInput)).toBe(1566);
+    expect(solutionPartOne(testInput)).toBe(1490523);
 });
 
 test('Day 7 Part 2', () => {
-    expect(solutionPartTwo(testInput)).toBe(2265);
+    expect(solutionPartTwo(testInput)).toBe(12390492);
 });
