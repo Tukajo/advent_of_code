@@ -45,10 +45,11 @@ export class ListNode {
         if (!(xDistance <= 1 && yDistance <= 1)) {
             this.pos[0] += Math.sign(parentX - x);
             this.pos[1] += Math.sign(parentY - y);
+            // We only need to mark a visit if we are moving to a new position.
+            this.visits[`${this.pos[0]},${this.pos[1]}`] = true;
             // We only need to move the next node if this node had moved.
             this.next?.moveRope(this.pos);
         }
-        this.visits[`${this.pos[0]},${this.pos[1]}`] = true;
     }
 }
 export const solutionPartOne = (input: string): number => {
