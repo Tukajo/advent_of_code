@@ -38,7 +38,6 @@ export class ListNode {
     public moveRope(parentPos: [number, number]): void {
         // Check to see if this node is adjacent to the parent node.
         const [x, y] = this.pos;
-        this.visits[`${x},${y}`] = true;
         const [parentX, parentY] = parentPos;
         const xDistance = Math.abs(x - parentX);
         const yDistance = Math.abs(y - parentY);
@@ -49,6 +48,7 @@ export class ListNode {
             // We only need to move the next node if this node had moved.
             this.next?.moveRope(this.pos);
         }
+        this.visits[`${this.pos[0]},${this.pos[1]}`] = true;
     }
 }
 export const solutionPartOne = (input: string): number => {
